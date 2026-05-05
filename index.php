@@ -33,7 +33,6 @@
                 <option value="">-- Pilih Jurusan --</option>
                 <option value="Sistem Informasi">Sistem Informasi</option>
                 <option value="Teknik Informatika">Teknik Informatika</option>
-                <option value="Manajemen Informatika">Manajemen Informatika</option>
             </select>
         </div>
         <button type="submit" name="submit">Submit</button>
