@@ -10,7 +10,7 @@
 
     <div class="container">
         <h2>Form Input Barang</h2>
-        <form action="#">
+        <form id="barangForm">
             <div class="form-group">
                 <label for="kode">Kode Barang</label>
                 <input type="text" id="kode" placeholder="Contoh: BRG-001" required>
@@ -33,8 +33,46 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-simpan">SUBMIT</button>        </form>
+            <button type="submit" class="btn-simpan">SUBMIT</button>
+        </form>
+
+        <div id="hasil" class="hasil" style="display: none;">
+            <h3>Hasil Input:</h3>
+            <p><strong>Kode Barang:</strong> <span id="hasilKode"></span></p>
+            <p><strong>Nama Barang:</strong> <span id="hasilNama"></span></p>
+            <p><strong>Jumlah:</strong> <span id="hasilJumlah"></span></p>
+            <p><strong>Harga:</strong> <span id="hasilHarga"></span></p>
+            <p><strong>Total Harga:</strong> Rp <span id="hasilTotal"></span></p>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('barangForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form
+
+            // Ambil nilai dari input
+            const kode = document.getElementById('kode').value;
+            const nama = document.getElementById('nama').value;
+            const jumlah = parseInt(document.getElementById('jumlah').value);
+            const harga = parseFloat(document.getElementById('harga').value);
+
+            // Hitung total harga
+            const total = jumlah * harga;
+
+            // Tampilkan hasil
+            document.getElementById('hasilKode').textContent = kode;
+            document.getElementById('hasilNama').textContent = nama;
+            document.getElementById('hasilJumlah').textContent = jumlah;
+            document.getElementById('hasilHarga').textContent = harga.toLocaleString('id-ID');
+            document.getElementById('hasilTotal').textContent = total.toLocaleString('id-ID');
+
+            // Tampilkan div hasil
+            document.getElementById('hasil').style.display = 'block';
+
+            // Scroll ke hasil
+            document.getElementById('hasil').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
