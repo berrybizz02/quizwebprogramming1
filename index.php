@@ -33,8 +33,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-simpan">Simpan Data</button>
-        </form>
+            <button type="submit" class="btn-simpan">SUBMIT</button>        </form>
     </div>
 
 </body>
